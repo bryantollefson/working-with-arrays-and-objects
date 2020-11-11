@@ -50,7 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  employees.forEach((element, index) => {
+    if(element.firstName === "Theo"){
+      employees.splice(index, 1)
+    } else if(element.firstName === "Lorie"){
+      element.department = "HR"
+    }
+  });
+  return employees
+}
+
 
 
 
@@ -68,7 +78,13 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+
+
+
+function removeDuplicates(workplaceAccidents) {
+  return workplaceAccidents.filter((element, index) => workplaceAccidents.indexOf(element) === index)
+}
+  
 
 
 
@@ -96,7 +112,10 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
+var grumpyActivity = cat.catFriends[0].activities[1];
+
+var fluffy2ndFriend = cat.catFriends[1].name;
+
 var grumpyActivity;
 var fluffy2ndFriend;
 
@@ -138,10 +157,11 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
-
-
+function recordCleaner() {
+myCar.accidents.forEach((element) => {
+  element.atFaultForAccident = false
+});
+}
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
@@ -157,6 +177,18 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+function looper () {
+  for (let i = 0; i < numsArr.length; i++) {
+    let innerArr = numsArr[i]
+    for (let j = 0; j < innerArr.length; j++) {
+      const element = innerArr[j];
+      if (element % 2 === 0) {
+        innerArr.splice(j, 1, "even")
+      } else {
+        innerArr.splice(j, 1, "odd")
+      }
+    }
+    
+  }
+  return numsArr;
+}
